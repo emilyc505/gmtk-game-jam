@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bcragklmym0ve"
-path="res://.godot/imported/boo sprite element ballR.png-78b17858124224d2655f49cf39080f45.ctex"
+uid="uid://nf2scgp4kr8n"
+path="res://.godot/imported/boo sprite-dedR.png-baa25c5b1c5f716c373f6390e0759b99.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://boo sprite sheets/boo sprite element ballR.png"
-dest_files=["res://.godot/imported/boo sprite element ballR.png-78b17858124224d2655f49cf39080f45.ctex"]
+source_file="res://boo/boo sprite sheets/boo sprite-dedR.png"
+dest_files=["res://.godot/imported/boo sprite-dedR.png-baa25c5b1c5f716c373f6390e0759b99.ctex"]
 
 [params]
 

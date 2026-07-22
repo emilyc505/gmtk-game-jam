@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cwrmltlretsul"
-path="res://.godot/imported/boo sprite idleR.png-42424ab58d64b5f99a465e179bafc12a.ctex"
+uid="uid://dme4ylje3t263"
+path="res://.godot/imported/slime sheet.png-b85f6f92b56baff371fed20f64a1bf05.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://boo sprite sheets/boo sprite idleR.png"
-dest_files=["res://.godot/imported/boo sprite idleR.png-42424ab58d64b5f99a465e179bafc12a.ctex"]
+source_file="res://slime/slime sheet.png"
+dest_files=["res://.godot/imported/slime sheet.png-b85f6f92b56baff371fed20f64a1bf05.ctex"]
 
 [params]
 

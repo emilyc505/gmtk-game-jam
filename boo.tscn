@@ -104,7 +104,7 @@ _data = {
 script = ExtResource("1_ao4oo")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=454190326]
-position = Vector2(0.9999695, -3.0517578e-05)
+position = Vector2(-0.9999981, -41)
 scale = Vector2(0.195625, 0.201875)
 texture = ExtResource("2_i680w")
 hframes = 4

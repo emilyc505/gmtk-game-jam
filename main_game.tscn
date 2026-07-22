@@ -1,7 +1,21 @@
 [gd_scene format=3 uid="uid://cbuvpob2qiylb"]
 
 [ext_resource type="PackedScene" uid="uid://ddmpitpvlmds2" path="res://boo_char.tscn" id="1_1oj5k"]
+[ext_resource type="PackedScene" uid="uid://4vj73dbi2364" path="res://slime.tscn" id="2_yx7mw"]
 
 [node name="Game" type="Node2D" unique_id=2092998670]
 
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1210313790]
+z_index = -1
+offset_right = 1907.0
+offset_bottom = 1072.0
+mouse_filter = 2
+color = Color(0.30895358, 0.30895358, 0.30895358, 1)
+
 [node name="boo" parent="." unique_id=1639585024 instance=ExtResource("1_1oj5k")]
+position = Vector2(972, 543)
+platform_floor_layers = 4294901760
+
+[node name="slime" parent="." unique_id=1998701255 instance=ExtResource("2_yx7mw")]
+position = Vector2(404, 748)
+platform_floor_layers = 4294901760

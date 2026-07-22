@@ -3,6 +3,8 @@ extends CharacterBody2D
 @onready var boo = $"boo"
 var last_direction := "right"
 @export var slash: PackedScene
+var is_attacking = false
+var health = 10
 
 func _process(delta):
 	$WeaponPivot.look_at(get_global_mouse_position())
@@ -17,10 +19,18 @@ func _unhandled_input(event):
 	if event.is_action_pressed("attack"):
 		attack()
 
+func _on_attack_finished():
+	is_attacking = false
+
 func _physics_process(delta):
 	const SPEED = 600.0
-	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
-	velocity = direction * SPEED
+	
+	if is_attacking:
+		velocity.x = 0
+		velocity.y = 0
+	else:
+		var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
+		velocity = direction * SPEED
 
 	move_and_slide()
 
@@ -36,12 +46,21 @@ func _physics_process(delta):
 			boo.play_animation("idleR")
 
 func attack():
+	is_attacking = true
 	var slash_attack = slash.instantiate()
-	# Attach to the player, not WeaponPivot
 	add_child(slash_attack)
-	# Get the current attack direction
 	var direction = (get_global_mouse_position() - global_position).normalized()
-	# Place the slash in front of the player
 	slash_attack.position = direction * 128
-	# Lock the rotation
 	slash_attack.rotation = direction.angle()
+	await slash_attack.get_node("AnimationPlayer").animation_finished
+	is_attacking = false
+
+func take_damage(amount: int):
+	health -= amount
+
+	if health <= 0:
+		die()
+
+func die():
+	print("Game Over")
+	queue_free()

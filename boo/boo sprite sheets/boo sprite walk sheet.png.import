@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bfrr20hvchy4a"
-path="res://.godot/imported/boo sprite walk sheet.png-f1cdee605b27093d47ddb9d2a004d7a1.ctex"
+path="res://.godot/imported/boo sprite walk sheet.png-7678af8ac35d0df7c3eff9468a9c3431.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://boo sprite sheets/boo sprite walk sheet.png"
-dest_files=["res://.godot/imported/boo sprite walk sheet.png-f1cdee605b27093d47ddb9d2a004d7a1.ctex"]
+source_file="res://boo/boo sprite sheets/boo sprite walk sheet.png"
+dest_files=["res://.godot/imported/boo sprite walk sheet.png-7678af8ac35d0df7c3eff9468a9c3431.ctex"]
 
 [params]
 

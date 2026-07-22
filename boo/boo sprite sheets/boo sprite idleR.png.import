@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ddc7qtyoehl2d"
-path="res://.godot/imported/boo sprite-dmgR.png-b3d6bda78fe82306837774a25f839dbb.ctex"
+uid="uid://cwrmltlretsul"
+path="res://.godot/imported/boo sprite idleR.png-c1090e477b2c3afbf14a51d22a9bd36f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://boo sprite sheets/boo sprite-dmgR.png"
-dest_files=["res://.godot/imported/boo sprite-dmgR.png-b3d6bda78fe82306837774a25f839dbb.ctex"]
+source_file="res://boo/boo sprite sheets/boo sprite idleR.png"
+dest_files=["res://.godot/imported/boo sprite idleR.png-c1090e477b2c3afbf14a51d22a9bd36f.ctex"]
 
 [params]
 
