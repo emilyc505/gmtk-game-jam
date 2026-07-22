@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://ddmpitpvlmds2"]
+
+[ext_resource type="PackedScene" uid="uid://bgo4psth3dg17" path="res://boo.tscn" id="1_6hsc1"]
+[ext_resource type="Script" uid="uid://cvlkjax7ikoiy" path="res://boo_char.gd" id="1_6xqhe"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_taduo"]
+radius = 33.0
+height = 112.0
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1639585024]
+script = ExtResource("1_6xqhe")
+
+[node name="Sprite2D" parent="." unique_id=454190326 instance=ExtResource("1_6hsc1")]
+position = Vector2(0, -47)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=315034070]
+position = Vector2(6, -33)
+shape = SubResource("CapsuleShape2D_taduo")

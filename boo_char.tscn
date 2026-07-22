@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://ddmpitpvlmds2"]
+
+[ext_resource type="PackedScene" uid="uid://bgo4psth3dg17" path="res://boo.tscn" id="1_6hsc1"]
+[ext_resource type="Script" uid="uid://cvlkjax7ikoiy" path="res://boo_char.gd" id="1_6xqhe"]
+[ext_resource type="PackedScene" uid="uid://c40vv2w5gb2n4" path="res://slash.tscn" id="3_0g8jp"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_taduo"]
+radius = 33.0
+height = 112.0
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1639585024]
+script = ExtResource("1_6xqhe")
+slash = ExtResource("3_0g8jp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=315034070]
+top_level = true
+position = Vector2(5, -10)
+shape = SubResource("CapsuleShape2D_taduo")
+
+[node name="boo" parent="." unique_id=454190326 instance=ExtResource("1_6hsc1")]
+position = Vector2(1, -32)
+
+[node name="WeaponPivot" type="Node2D" parent="." unique_id=1806870421]
+
+[node name="AttackSpawn" type="Marker2D" parent="WeaponPivot" unique_id=1662346153]

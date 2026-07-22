@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://c40vv2w5gb2n4"]
+
+[ext_resource type="Texture2D" uid="uid://bibg4bh0xtdgr" path="res://all slash.png" id="1_bf50k"]
+[ext_resource type="Script" uid="uid://dm01b5cgo5wcu" path="res://slash.gd" id="1_tocf0"]
+
+[sub_resource type="Animation" id="Animation_tocf0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_glx33"]
+resource_name = "light_slash"
+length = 0.26666668
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.13333334),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_g6ky6"]
+_data = {
+&"RESET": SubResource("Animation_tocf0"),
+&"light_slash": SubResource("Animation_glx33")
+}
+
+[node name="slash" type="Area2D" unique_id=1126999895]
+script = ExtResource("1_tocf0")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1835346172]
+position = Vector2(1, -2.9999998)
+scale = Vector2(0.15531257, 0.15894529)
+texture = ExtResource("1_bf50k")
+hframes = 4
+vframes = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=818314464]
+libraries/ = SubResource("AnimationLibrary_g6ky6")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=429819792]
+visible = false
+position = Vector2(0, -4)
+polygon = PackedVector2Array(-17, -45, -5, -45, 19, -20, 22, -12, 23, 17, 7, 46, -6, 47, -6, 38, 8, 18, 8, -11, -18, -41)
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

@@ -1,0 +1,116 @@
+[gd_scene format=3 uid="uid://bgo4psth3dg17"]
+
+[ext_resource type="Script" uid="uid://coofkhm2egyd6" path="res://boo_node.gd" id="1_ao4oo"]
+[ext_resource type="Texture2D" uid="uid://dayqhg8okygp7" path="res://boo sprite sheets/boo_main.png" id="2_i680w"]
+[ext_resource type="Script" uid="uid://d3dc78q260xm4" path="res://boo_sprite_player.gd" id="3_i680w"]
+
+[sub_resource type="Animation" id="Animation_ao4oo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_e2018"]
+resource_name = "idleL"
+length = 1.2
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [4, 5, 6, 7]
+}
+
+[sub_resource type="Animation" id="Animation_i680w"]
+resource_name = "idleR"
+length = 1.2
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_xay6f"]
+resource_name = "walkL"
+length = 0.6
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [12, 13, 14]
+}
+
+[sub_resource type="Animation" id="Animation_faa31"]
+resource_name = "walkR"
+length = 0.6
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [8, 9, 10]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_e2018"]
+_data = {
+&"RESET": SubResource("Animation_ao4oo"),
+&"idleL": SubResource("Animation_e2018"),
+&"idleR": SubResource("Animation_i680w"),
+&"walkL": SubResource("Animation_xay6f"),
+&"walkR": SubResource("Animation_faa31")
+}
+
+[node name="boo" type="Node2D" unique_id=1932679745]
+script = ExtResource("1_ao4oo")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=454190326]
+position = Vector2(0.9999695, -3.0517578e-05)
+scale = Vector2(0.195625, 0.201875)
+texture = ExtResource("2_i680w")
+hframes = 4
+vframes = 4
+script = ExtResource("3_i680w")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1095166313]
+root_node = NodePath("../Sprite2D")
+libraries/ = SubResource("AnimationLibrary_e2018")
