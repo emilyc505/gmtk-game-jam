@@ -29,17 +29,13 @@ func get_rand_pos_offset() -> Vector2:
 	
 	var random_radius = randf_range(min_radius, max_radius)
 	
-	print('rr', random_radius)
-	
 	return Vector2.from_angle(rads) * random_radius
 
 func _on_timer_timeout() -> void:
 	var enemy = enemy_scenes.pick_random().instantiate()	
-	print(randf_range(0, 2 * PI))
+
 	enemy.position = player.global_position + get_rand_pos_offset()
-	print('pos ', position)
-	print('x ', mid_x)
-	print('y ', mid_y)
+
 	get_parent().add_child(enemy)
 	
 	
