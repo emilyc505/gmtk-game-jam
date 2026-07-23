@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://ddmpitpvlmds2" path="res://boo_char.tscn" id="1_1oj5k"]
 [ext_resource type="PackedScene" uid="uid://4vj73dbi2364" path="res://slime.tscn" id="2_yx7mw"]
+[ext_resource type="Script" uid="uid://bjaid78lk70i6" path="res://scripts/spawner.gd" id="3_6bm6p"]
 
 [node name="Game" type="Node2D" unique_id=2092998670]
 
@@ -19,3 +20,13 @@ platform_floor_layers = 4294901760
 [node name="slime" parent="." unique_id=1998701255 instance=ExtResource("2_yx7mw")]
 position = Vector2(404, 748)
 platform_floor_layers = 4294901760
+
+[node name="spawner" type="Node2D" parent="." unique_id=1138925320]
+position = Vector2(972, 543)
+script = ExtResource("3_6bm6p")
+
+[node name="Timer" type="Timer" parent="spawner" unique_id=590271485]
+wait_time = 2.0
+autostart = true
+
+[connection signal="timeout" from="spawner/Timer" to="spawner" method="_on_timer_timeout"]
