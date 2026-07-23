@@ -30,9 +30,11 @@ func _ready():
 	attack_area.monitoring = false
 
 func _physics_process(_delta):
-	
 	match state:
 		State.CHASE:
+			if boo == null:
+				velocity = Vector2.ZERO
+				return
 			var direction = global_position.direction_to(boo.global_position)
 			velocity = direction * speed
 			move_and_slide()

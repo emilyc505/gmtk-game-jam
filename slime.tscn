@@ -4,8 +4,9 @@
 [ext_resource type="Script" uid="uid://wcc3pgy8i1xf" path="res://slime.gd" id="1_5jc4t"]
 [ext_resource type="Script" uid="uid://dn1xb0kinlvad" path="res://slime_node.gd" id="2_4l1t8"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_taduo"]
-radius = 40.04997
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ppcr1"]
+radius = 30.0
+height = 88.0
 
 [sub_resource type="Animation" id="Animation_5jc4t"]
 length = 0.001
@@ -65,12 +66,18 @@ _data = {
 &"defaultR": SubResource("Animation_ppcr1")
 }
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4l1t8"]
+radius = 41.0
+height = 110.0
+
 [node name="slime" type="CharacterBody2D" unique_id=1998701255]
+platform_floor_layers = 4294901760
 script = ExtResource("1_5jc4t")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=634030002]
-position = Vector2(-2, -15)
-shape = SubResource("CircleShape2D_taduo")
+position = Vector2(0, -12)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_ppcr1")
 
 [node name="slime" type="Node2D" parent="." unique_id=1505952425]
 script = ExtResource("2_4l1t8")
@@ -86,10 +93,12 @@ libraries/ = SubResource("AnimationLibrary_jayke")
 
 [node name="AttackArea" type="Area2D" parent="." unique_id=1626295843]
 collision_layer = 128
+collision_mask = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea" unique_id=928873493]
-position = Vector2(-2, -15)
-shape = SubResource("CircleShape2D_taduo")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea" unique_id=67497774]
+position = Vector2(-2, -14)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_4l1t8")
 
 [node name="AttackCD" type="Timer" parent="." unique_id=2015687850]
 wait_time = 1.5

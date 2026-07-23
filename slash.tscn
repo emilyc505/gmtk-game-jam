@@ -43,7 +43,6 @@ _data = {
 [node name="slash" type="Area2D" unique_id=1126999895]
 z_index = 35
 collision_layer = 8
-collision_mask = 2
 script = ExtResource("1_tocf0")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1835346172]
@@ -57,9 +56,9 @@ vframes = 4
 libraries/ = SubResource("AnimationLibrary_g6ky6")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=429819792]
-visible = false
 position = Vector2(0, -4)
 polygon = PackedVector2Array(-17, -45, -5, -45, 19, -20, 22, -12, 23, 17, 7, 46, -6, 47, -6, 38, 8, 18, 8, -11, -18, -41)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

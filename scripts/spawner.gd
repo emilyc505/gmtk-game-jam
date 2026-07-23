@@ -32,6 +32,8 @@ func get_rand_pos_offset() -> Vector2:
 	return Vector2.from_angle(rads) * random_radius
 
 func _on_timer_timeout() -> void:
+	if player == null:
+		return
 	var enemy = enemy_scenes.pick_random().instantiate()	
 
 	enemy.position = player.global_position + get_rand_pos_offset()
