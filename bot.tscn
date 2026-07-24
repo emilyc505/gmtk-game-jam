@@ -1,0 +1,145 @@
+[gd_scene format=3 uid="uid://c7ltoutrhyevl"]
+
+[ext_resource type="Script" uid="uid://dj65ec70quf57" path="res://bot.gd" id="1_5unqy"]
+[ext_resource type="Script" uid="uid://tt4g3n4g6mo6" path="res://bot_node.gd" id="1_mo174"]
+[ext_resource type="Texture2D" uid="uid://dfv21i8lv4xat" path="res://bot/bot.png" id="1_n8o8f"]
+
+[sub_resource type="Animation" id="Animation_mo174"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("bot_node/Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_5unqy"]
+resource_name = "chargeL"
+length = 2.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("bot_node/Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.20000002, 0.3, 0.4, 0.5, 0.6, 0.70000005, 0.8, 0.9, 1, 1.1, 1.2, 1.3000001, 1.4, 1.4999999, 1.6, 1.6999999, 1.8000001, 1.9, 1.9999999, 2.1, 2.1999998, 2.3000002, 2.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [12, 13, 14, 15, 13, 14, 15, 13, 14, 15, 13, 14, 15, 13, 14, 15, 13, 14, 15, 13, 14, 15, 13, 14, 15]
+}
+
+[sub_resource type="Animation" id="Animation_abwpn"]
+resource_name = "chargeR"
+length = 2.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("bot_node/Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.90000004, 1, 1.0999999, 1.2, 1.3, 1.4, 1.5, 1.6, 1.6999999, 1.8, 1.9, 1.9999999, 2.1, 2.1999998),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [8, 9, 10, 11, 9, 10, 11, 9, 10, 11, 9, 10, 11, 9, 10, 11, 9, 10, 11, 9, 10, 11, 9]
+}
+
+[sub_resource type="Animation" id="Animation_58dd5"]
+resource_name = "idleL"
+length = 1.6
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("bot_node/Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [4, 5]
+}
+
+[sub_resource type="Animation" id="Animation_jtncq"]
+resource_name = "idleR"
+length = 1.6
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("bot_node/Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3sbvp"]
+_data = {
+&"RESET": SubResource("Animation_mo174"),
+&"chargeL": SubResource("Animation_5unqy"),
+&"chargeR": SubResource("Animation_abwpn"),
+&"idleL": SubResource("Animation_58dd5"),
+&"idleR": SubResource("Animation_jtncq")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h2c31"]
+radius = 44.0
+height = 130.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_taduo"]
+radius = 41.999992
+height = 154.0
+
+[node name="bot" type="CharacterBody2D" unique_id=294459605]
+platform_floor_layers = 4294967040
+script = ExtResource("1_5unqy")
+
+[node name="bot_node" type="Node2D" parent="." unique_id=1892144030]
+script = ExtResource("1_mo174")
+
+[node name="Sprite2D" type="Sprite2D" parent="bot_node" unique_id=754843873]
+position = Vector2(-15, -20.000002)
+scale = Vector2(0.15166667, 0.15083331)
+texture = ExtResource("1_n8o8f")
+hframes = 4
+vframes = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="bot_node" unique_id=262392235]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_3sbvp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1640079343]
+position = Vector2(-7, -19)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_h2c31")
+
+[node name="Attack" type="Area2D" parent="." unique_id=751748741]
+position = Vector2(106, 18)
+
+[node name="AttackArea" type="CollisionShape2D" parent="Attack" unique_id=1912169016]
+position = Vector2(-125, -37)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_taduo")
+
+[node name="AttackCD" type="Timer" parent="." unique_id=535061211]
+wait_time = 1.5
+
+[connection signal="area_entered" from="Attack" to="." method="_on_attack_area_entered"]
+[connection signal="body_entered" from="Attack" to="." method="_on_attack_body_entered"]
+[connection signal="timeout" from="AttackCD" to="." method="_on_attack_cd_timeout"]
