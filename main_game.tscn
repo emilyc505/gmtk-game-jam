@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://ddmpitpvlmds2" path="res://boo_char.tscn" id="1_1oj5k"]
 [ext_resource type="PackedScene" uid="uid://4vj73dbi2364" path="res://slime.tscn" id="2_yx7mw"]
 [ext_resource type="Script" uid="uid://bjaid78lk70i6" path="res://scripts/spawner.gd" id="3_6bm6p"]
+[ext_resource type="PackedScene" uid="uid://c7ltoutrhyevl" path="res://bot.tscn" id="3_dugkq"]
 
 [node name="Game" type="Node2D" unique_id=2092998670]
 
@@ -15,11 +16,12 @@ color = Color(0.30895358, 0.30895358, 0.30895358, 1)
 
 [node name="boo" parent="." unique_id=1639585024 instance=ExtResource("1_1oj5k")]
 position = Vector2(972, 543)
-platform_floor_layers = 4294901760
 
 [node name="slime" parent="." unique_id=1998701255 instance=ExtResource("2_yx7mw")]
 position = Vector2(404, 748)
-platform_floor_layers = 4294901760
+
+[node name="bot" parent="." unique_id=294459605 instance=ExtResource("3_dugkq")]
+position = Vector2(248, 314)
 
 [node name="spawner" type="Node2D" parent="." unique_id=1138925320]
 position = Vector2(972, 543)
