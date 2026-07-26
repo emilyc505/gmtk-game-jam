@@ -5,6 +5,9 @@ var last_direction := "right"
 @export var slash: PackedScene
 var is_attacking = false
 var health = 10
+var max_health = 10
+
+signal health_changed(new_health, max_health)
 
 func _process(delta):
 	$WeaponPivot.look_at(get_global_mouse_position())
@@ -57,10 +60,10 @@ func attack():
 
 func take_damage(amount: int):
 	health -= amount
-
-	if health <= 0:
-		die()
-
+	
+	health_changed.emit(health, max_health)
+	
 func die():
 	print("Game Over")
 	queue_free()
+	

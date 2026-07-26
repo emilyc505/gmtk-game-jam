@@ -1,10 +1,16 @@
 [gd_scene format=3 uid="uid://cbuvpob2qiylb"]
 
+[ext_resource type="Script" uid="uid://defe43wyxevep" path="res://scripts/main_game.gd" id="1_0rdsr"]
 [ext_resource type="PackedScene" uid="uid://ddmpitpvlmds2" path="res://scenes/boo_char.tscn" id="1_1oj5k"]
 [ext_resource type="Script" uid="uid://bjaid78lk70i6" path="res://scripts/spawner.gd" id="3_6bm6p"]
 [ext_resource type="PackedScene" uid="uid://c7ltoutrhyevl" path="res://scenes/bot.tscn" id="3_dugkq"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_0rdsr"]
+font_size = 40
+font_color = Color(0.8288101, 2.7193873e-06, 5.7756904e-07, 1)
+
 [node name="Game" type="Node2D" unique_id=2092998670]
+script = ExtResource("1_0rdsr")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1210313790]
 z_index = -1
@@ -27,4 +33,28 @@ script = ExtResource("3_6bm6p")
 wait_time = 2.0
 autostart = true
 
+[node name="game over" type="CanvasLayer" parent="." unique_id=2108794726]
+visible = false
+
+[node name="ColorRect2" type="ColorRect" parent="game over" unique_id=1775153843]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="game over" unique_id=1398969352]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+text = "gg lol get rekt kid"
+label_settings = SubResource("LabelSettings_0rdsr")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="health_changed" from="boo" to="." method="_on_boo_health_changed"]
 [connection signal="timeout" from="spawner/Timer" to="spawner" method="_on_timer_timeout"]
