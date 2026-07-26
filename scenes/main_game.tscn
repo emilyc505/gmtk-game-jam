@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://ddmpitpvlmds2" path="res://scenes/boo_char.tscn" id="1_1oj5k"]
 [ext_resource type="Script" uid="uid://bjaid78lk70i6" path="res://scripts/spawner.gd" id="3_6bm6p"]
 [ext_resource type="PackedScene" uid="uid://c7ltoutrhyevl" path="res://scenes/bot.tscn" id="3_dugkq"]
+[ext_resource type="Script" uid="uid://dp2wlcvtbjh2t" path="res://scripts/health_bar.gd" id="5_ipu61"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_0rdsr"]
 font_size = 40
@@ -21,6 +22,21 @@ color = Color(0.30895358, 0.30895358, 0.30895358, 1)
 
 [node name="boo" parent="." unique_id=1639585024 instance=ExtResource("1_1oj5k")]
 position = Vector2(972, 543)
+
+[node name="health bar" type="ProgressBar" parent="boo" unique_id=1548975135]
+custom_minimum_size = Vector2(200, 0)
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -931.0
+offset_top = 486.0
+offset_right = -731.0
+offset_bottom = 513.0
+grow_vertical = 0
+step = 0.0
+value = 100.0
+rounded = true
+script = ExtResource("5_ipu61")
 
 [node name="bot" parent="." unique_id=294459605 instance=ExtResource("3_dugkq")]
 position = Vector2(248, 314)
@@ -57,4 +73,5 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [connection signal="health_changed" from="boo" to="." method="_on_boo_health_changed"]
+[connection signal="health_changed" from="boo" to="boo/health bar" method="_on_boo_health_changed"]
 [connection signal="timeout" from="spawner/Timer" to="spawner" method="_on_timer_timeout"]

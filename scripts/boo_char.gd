@@ -7,7 +7,7 @@ var is_attacking = false
 var health = 10
 var max_health = 10
 
-signal health_changed(new_health, max_health)
+signal health_changed(new_health: int, max_health: int)
 
 func _process(delta):
 	$WeaponPivot.look_at(get_global_mouse_position())
