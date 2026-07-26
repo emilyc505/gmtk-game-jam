@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://c7ltoutrhyevl"]
 
-[ext_resource type="Script" uid="uid://dj65ec70quf57" path="res://bot.gd" id="1_5unqy"]
-[ext_resource type="Script" uid="uid://tt4g3n4g6mo6" path="res://bot_node.gd" id="1_mo174"]
-[ext_resource type="Texture2D" uid="uid://dfv21i8lv4xat" path="res://bot/bot.png" id="1_n8o8f"]
+[ext_resource type="Script" uid="uid://dj65ec70quf57" path="res://scripts/bot.gd" id="1_5unqy"]
+[ext_resource type="Script" uid="uid://tt4g3n4g6mo6" path="res://scripts/bot_node.gd" id="1_mo174"]
+[ext_resource type="Texture2D" uid="uid://dfv21i8lv4xat" path="res://assets/bot/bot.png" id="1_n8o8f"]
 
 [sub_resource type="Animation" id="Animation_mo174"]
 length = 0.001

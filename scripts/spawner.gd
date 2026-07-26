@@ -3,7 +3,7 @@ extends Node2D
 @onready var player = get_node("/root/Game/boo")
 
 @export var enemy_scenes : Array[PackedScene] = [
-	preload("res://bot.tscn")
+	preload("res://scenes/bot.tscn")
 ]
 
 var mid_x : int

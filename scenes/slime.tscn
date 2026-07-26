@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://4vj73dbi2364"]
 
-[ext_resource type="Texture2D" uid="uid://dme4ylje3t263" path="res://slime/slime sheet.png" id="1_2d52u"]
-[ext_resource type="Script" uid="uid://wcc3pgy8i1xf" path="res://slime.gd" id="1_5jc4t"]
-[ext_resource type="Script" uid="uid://dn1xb0kinlvad" path="res://slime_node.gd" id="2_4l1t8"]
+[ext_resource type="Texture2D" uid="uid://dme4ylje3t263" path="res://assets/slime/slime sheet.png" id="1_2d52u"]
+[ext_resource type="Script" uid="uid://wcc3pgy8i1xf" path="res://scripts/slime.gd" id="1_5jc4t"]
+[ext_resource type="Script" uid="uid://dn1xb0kinlvad" path="res://scripts/slime_node.gd" id="2_4l1t8"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ppcr1"]
 radius = 30.0

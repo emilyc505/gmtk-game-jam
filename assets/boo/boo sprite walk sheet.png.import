@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxjkryal4a36g"
-path="res://.godot/imported/slash.png-347809abd23322e0b6d7a4af4ad604b9.ctex"
+uid="uid://bfrr20hvchy4a"
+path="res://.godot/imported/boo sprite walk sheet.png-5b47d7103a41e428011c98f40263ac43.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://slash.png"
-dest_files=["res://.godot/imported/slash.png-347809abd23322e0b6d7a4af4ad604b9.ctex"]
+source_file="res://assets/boo/boo sprite walk sheet.png"
+dest_files=["res://.godot/imported/boo sprite walk sheet.png-5b47d7103a41e428011c98f40263ac43.ctex"]
 
 [params]
 

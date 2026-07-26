@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://ddmpitpvlmds2"]
 
-[ext_resource type="PackedScene" uid="uid://bgo4psth3dg17" path="res://boo.tscn" id="1_6hsc1"]
-[ext_resource type="Script" uid="uid://cvlkjax7ikoiy" path="res://boo_char.gd" id="1_6xqhe"]
-[ext_resource type="PackedScene" uid="uid://c40vv2w5gb2n4" path="res://slash.tscn" id="3_0g8jp"]
+[ext_resource type="PackedScene" uid="uid://bgo4psth3dg17" path="res://scenes/boo.tscn" id="1_6hsc1"]
+[ext_resource type="Script" uid="uid://cvlkjax7ikoiy" path="res://scripts/boo_char.gd" id="1_6xqhe"]
+[ext_resource type="PackedScene" uid="uid://c40vv2w5gb2n4" path="res://scenes/slash.tscn" id="3_0g8jp"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jayke"]
 radius = 29.0

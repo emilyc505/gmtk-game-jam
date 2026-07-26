@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c40vv2w5gb2n4"]
 
-[ext_resource type="Texture2D" uid="uid://bibg4bh0xtdgr" path="res://all slash.png" id="1_bf50k"]
-[ext_resource type="Script" uid="uid://dm01b5cgo5wcu" path="res://slash.gd" id="1_tocf0"]
+[ext_resource type="Texture2D" uid="uid://bibg4bh0xtdgr" path="res://assets/slash/all slash.png" id="1_bf50k"]
+[ext_resource type="Script" uid="uid://dm01b5cgo5wcu" path="res://scripts/slash.gd" id="1_tocf0"]
 
 [sub_resource type="Animation" id="Animation_tocf0"]
 length = 0.001
